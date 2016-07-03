@@ -1,10 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import DealFinder from './components/deal_finder.jsx';
 
-class App extends React.Component {
+const App = React.createClass({
   render () {
-    return <p> Goodbye world!</p>;
+    return (
+      <DealFinder />
+    );
   }
-}
+});
 
 render(<App/>, document.getElementById('app'));

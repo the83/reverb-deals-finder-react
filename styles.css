@@ -1,0 +1,97 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  color: #f2f2f2;
+  background-color: #2e2e2e;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #2e2e2e;
+}
+
+select {
+  background-color: white;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#deals {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: #fdf5e6;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid orange;
+  background-color: #fdf5e6;
+  color: #2e2e2e;
+}
+
+.card:hover {
+  background-color: orange;
+  border: 1px solid black;
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-image {
+  margin-bottom: 30px;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.fields {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.field {
+  width: 50%;
+  padding: 10px;
+}
+
+.field input, select {
+  width: 100%;
+}
+
+#fetch-more {
+  width: 100%;
+  margin: 10px 0px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid orange;
+  background-color: #fdf5e6;
+  text-align: top;
+  padding: 10px;
+}
+
+#fetch-more:hover {
+  background-color: orange;
+  color: white;
+}
+
+#actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}

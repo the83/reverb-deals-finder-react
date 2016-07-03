@@ -7,7 +7,12 @@ var APP_DIR = path.resolve(__dirname, 'app');
 var config = {
   entry: {
     app: APP_DIR + '/index.jsx',
-    vendor: ['jquery', 'underscore'],
+    vendor: [
+      'jquery',
+      'q',
+      'react',
+      'immutability-helper'
+    ],
   },
   output: {
     path: BUILD_DIR,

@@ -17938,7 +17938,7 @@ webpackJsonp([0],[
 	  },
 	  guidePrice: function guidePrice() {
 	    try {
-	      return 'Price Guide: ' + this.props.listing.price_guide.estimated_value.price_low.display + '-' + this.props.listing.price_guide.estimated_value.price_high.display;
+	      return 'Guide: ' + this.props.listing.price_guide.estimated_value.price_low.display + '-' + this.props.listing.price_guide.estimated_value.price_high.display;
 	    } catch (_err) {
 	      return 'price guide data not found';
 	    }

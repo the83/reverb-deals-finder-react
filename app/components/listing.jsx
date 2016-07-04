@@ -18,7 +18,7 @@ const Listing = React.createClass({
 
   guidePrice() {
     try {
-      return 'Price Guide: ' +
+      return 'Guide: ' +
         this.props.listing.price_guide.estimated_value.price_low.display + '-' +
         this.props.listing.price_guide.estimated_value.price_high.display;
     } catch (_err) {

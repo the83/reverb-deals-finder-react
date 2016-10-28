@@ -32,16 +32,8 @@ const DealFinderForm = React.createClass({
     this.handleChange('category', value);
   },
 
-  handleNumPagesChange(event) {
-    this.handleChange('numPages', parseInt(event.target.value));
-  },
-
   handleThresholdChange(event) {
     this.handleChange('threshold', parseInt(event.target.value));
-  },
-
-  handleShippingChange(event) {
-    this.handleChange('shippingPrice', parseInt(event.target.value));
   },
 
   handleButtonClick() {
@@ -53,37 +45,23 @@ const DealFinderForm = React.createClass({
       <div id="deal-finder-form">
         <div className="fields">
           <div className="field">
-            <button id="fetch-more" onClick={this.handleButtonClick}>
-              <span>Fetch More!</span>
-            </button>
-          </div>
-        </div>
-
-        <div className="fields">
-          <CategoryPicker
-            categories={this.state.categories}
-            selected={this.props.category}
-            handleSelection={this.handleCategoryChange}/>
-
-          <div className="field">
-            <label htmlFor="num-pages">
-              # of API Pages to Scrape
-            </label>
-            <input id="num-pages" name="num-pages" type="text" value={this.props.numPages} onChange={this.handleNumPagesChange} />
+            <CategoryPicker
+              categories={this.state.categories}
+              selected={this.props.category}
+              handleSelection={this.handleCategoryChange}/>
           </div>
 
           <div className="field">
             <label htmlFor="threshold">
-              $ Above Price Guide Min
+              $ Above Price Guide Min:
             </label>
             <input id="threshold" name="threshold" type="text" value={this.props.threshold} onChange={this.handleThresholdChange} />
           </div>
 
           <div className="field">
-            <label htmlFor="shipping">
-              Your Shipping Price
-            </label>
-            <input id="shipping" name="shipping" type="text" value={this.props.shippingPrice} onChange={this.handleShippingChange} />
+            <button id="fetch-more" onClick={this.handleButtonClick}>
+              <span>Fetch More!</span>
+            </button>
           </div>
         </div>
       </div>

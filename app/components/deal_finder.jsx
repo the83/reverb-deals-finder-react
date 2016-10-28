@@ -8,9 +8,11 @@ import Listings from './listings.jsx';
 const defaultState = {
   category: 'effects-and-pedals',
   threshold: 10,
-  shippingPrice: 10,
-  numPages: 1,
+  shippingPrice: 0,
+  numPages: 10,
 };
+
+let pageOffset = 0;
 
 const DealFinder = React.createClass({
   componentDidMount() {
@@ -32,12 +34,12 @@ const DealFinder = React.createClass({
 
     for (let page = 1; page <= this.state.numPages; page++) {
       Q.delay(timeout).then(() => {
-        API.fetchListings(page, this.state.category).done((response) => {
+        API.fetchListings(page + pageOffset, this.state.category).done((response) => {
           this.addListings(response.listings);
         });
       });
 
-      timeout += 2000;
+      timeout += 1000;
     }
   },
 
@@ -81,24 +83,25 @@ const DealFinder = React.createClass({
   handleChange(field, value) {
     const sanitizedValue = (field != 'category' && isNaN(value)) ? 0 : value;
     localStorage.setItem(field, sanitizedValue);
+    if (field === 'category') { pageOffset = 0; }
     this.setState({ [field]: sanitizedValue });
   },
 
   render() {
     return (
       <div>
-        <Listings
-          listings={this.state.listings}
-          shippingPrice={this.state.shippingPrice}
-          threshold={this.state.threshold} />
-        <DealFinderForm
+       <DealFinderForm
           category={this.state.category}
           threshold={this.state.threshold}
           shippingPrice={this.state.shippingPrice}
           numPages={this.state.numPages}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit} />
-      </div>
+        <Listings
+          listings={this.state.listings}
+          shippingPrice={this.state.shippingPrice}
+          threshold={this.state.threshold} />
+       </div>
     );
   }
 });

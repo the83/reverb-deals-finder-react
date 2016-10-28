@@ -14,7 +14,7 @@ const CategoryPicker = React.createClass({
   render() {
     return (
       <div className="field">
-        <label htmlFor="#categories">Category</label>
+        <label htmlFor="#categories">Category:</label>
         <select onChange={this.handleSelection}
           name="category-picker"
           id="category-picker"
